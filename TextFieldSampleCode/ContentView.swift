@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State var textfieldText: String = ""
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                TextField("コメント", text: $textfieldText)
+                Button("test") {
+                    print("入力されたのは、、、", textfieldText)
+                }
+            }
         }
-        .padding()
     }
 }
 
